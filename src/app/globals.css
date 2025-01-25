@@ -9,13 +9,131 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a; */
+    /* --foreground: #ededed; */
   }
 }
 
 body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#envelope-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+}
+/* Envelope container */
+#envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+/* Envelope body */
+#body {
+  width: 100%;
+  height: 100%;
+  background-color: #c0392b;
+  position: absolute;
+  border-radius: 0 0 15px 15px;
+  z-index: -1;
+}
+
+/* Envelope flap */
+#top-flap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 150px solid #a03327;
+  top: 0;
+  left: 0;
+  transform-origin: top center;
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+#bottom-flap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 150px solid #c0392b;
+  border-radius: 15px;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+}
+
+#left-flap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 150px solid #e74c3c;
+  border-radius: 0 0 0 15px;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+#right-flap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-right: 150px solid #e74c3c;
+  border-radius: 0 0 15px 0;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+/* Letter inside */
+#letter {
+  position: absolute;
+  width: 90%;
+  height: 65%;
+  background-color: #fff;
+  top: -25%;
+  left: 5%;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(80%);
+  transition: transform 0.6s ease-in-out;
+  z-index: 2;
+}
+
+#lottie {
+  position: absolute;
+  top: -300%;
+  left: -35%;
+  transform: translateX(10%);
+  z-index: 2;
+  opacity: 0.9;
+  transition: opacity 3s ease-out;
+}
+.open #top-flap {
+  transform: rotateX(180deg);
+  border-top: 150px solid #c0392b;
+}
+
+.close #top-flap {
+  z-index: 5;
+}
+.open #letter {
+  transform: translateY(0);
 }
