@@ -1,4 +1,5 @@
 import { CircleCheck } from "lucide-react";
+import Link from "next/link";
 
 export const ProgressBar = () => {
   return (
@@ -11,27 +12,27 @@ export const ProgressBar = () => {
             <span className="absolute -bottom-[1.75rem] start-0 rounded-full bg-blue-600 text-white">
               <CircleCheck />
             </span>
-            <a href="/details" className="hidden sm:block">
+            <Link href="/details" className="hidden sm:block">
               Details
-            </a>
+            </Link>
           </li>
 
           <li className="relative flex justify-center text-blue-600">
             <span className="absolute -bottom-[1.75rem] left-1/2 -translate-x-1/2 rounded-full bg-blue-600 text-white">
               <CircleCheck />
             </span>
-            <a href="/message" className="hidden sm:block">
+            <Link href="/message" className="hidden sm:block">
               Message
-            </a>
+            </Link>
           </li>
 
           <li className="relative flex justify-end">
             <span className="absolute -bottom-[1.75rem] end-0 rounded-full bg-gray-600 text-white">
               <CircleCheck />
             </span>
-            <a href="/suprise" className="hidden sm:block">
+            <Link href="/suprise" className="hidden sm:block">
               Surprise
-            </a>
+            </Link>
           </li>
         </ol>
       </div>

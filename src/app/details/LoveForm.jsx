@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const questions = [
@@ -49,7 +50,7 @@ const questions = [
   {
     type: "text",
     question:
-      "You are almost there. Only one hundres and twenty more questions…",
+      "You are almost there. Only one hundred and twenty more questions…",
   },
   {
     type: "text",
@@ -77,47 +78,64 @@ export default function LoveForm() {
 
   return (
     <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg w-[90%] max-w-lg mx-auto">
-      <h2 className="text-xl font-bold text-center mb-4">
-        {questions[currentIndex].question}
-      </h2>
-      {questions[currentIndex].type === "text" ? (
-        <input
-          type="text"
-          value={answers[currentIndex]}
-          onChange={handleInputChange}
-          placeholder="Type your answer..."
-          className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-        />
-      ) : questions[currentIndex].type === "select" ? (
-        <select
-          value={answers[currentIndex]}
-          onChange={handleInputChange}
-          className="mt-1.5 w-full rounded-lg shadow-pink-200 shadow-lg text-gray-800 sm:text-sm p-4"
-        >
-          <option value="">Select an option...</option>
-          {questions[currentIndex].options.map((option, index) => (
-            <option key={index} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-      ) : null}
-      <div className="flex justify-between w-full mt-4">
-        <button
-          onClick={handleBack}
-          disabled={currentIndex === 0}
-          className="bg-gradient-to-r from-pink-700 to-blue-400 text-white px-4 py-2 rounded-md disabled:opacity-70"
-        >
-          Back
-        </button>
-        <button
-          onClick={handleNext}
-          disabled={false}
-          className="bg-gradient-to-l from-pink-700 to-blue-400 text-white px-4 py-2 rounded-md disabled:opacity-50"
-        >
-          {currentIndex === questions.length - 1 ? "Finish" : "Next"}
-        </button>
-      </div>
+      {currentIndex < questions.length ? (
+        <>
+          <h2 className="text-xl font-bold text-blue-500 text-center mb-4">
+            {questions[currentIndex].question}
+          </h2>
+          {questions[currentIndex].type === "text" ? (
+            <input
+              type="text"
+              value={answers[currentIndex]}
+              onChange={handleInputChange}
+              placeholder="Type your answer..."
+              className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+            />
+          ) : questions[currentIndex].type === "select" ? (
+            <select
+              value={answers[currentIndex]}
+              onChange={handleInputChange}
+              className="mt-1.5 w-full rounded-lg shadow-pink-200 shadow-lg text-gray-800 sm:text-sm p-4"
+            >
+              <option value="">Select an option...</option>
+              {questions[currentIndex].options.map((option, index) => (
+                <option key={index} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          ) : null}
+          <div className="flex justify-between w-full mt-4">
+            <button
+              onClick={handleBack}
+              disabled={currentIndex === 0}
+              className="bg-gradient-to-r from-pink-500 to-blue-300 text-white px-4 py-2 rounded-md disabled:opacity-70"
+            >
+              Back
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={false}
+              className="bg-gradient-to-l from-pink-500 to-blue-300 text-white px-4 py-2 rounded-md disabled:opacity-50"
+            >
+              {currentIndex === questions.length - 1 ? "Finish" : "Next"}
+            </button>
+          </div>
+        </>
+      ) : (
+        <div className="text-center">
+          <h2>💖 Well done! 💖</h2>
+          <h2 className="text-xl font-bold">
+            Click on the link below to continue:
+          </h2>
+          <Link
+            href="/message"
+            className="text-blue-500 underline mt-4 inline-block"
+          >
+            Go to Messages
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

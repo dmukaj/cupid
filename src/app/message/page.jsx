@@ -1,7 +1,14 @@
 import React from "react";
+import Message from "./Message";
+import FloatingHeart from "./FloatingHeart";
 
 const page = () => {
-  return <div>message</div>;
+  return (
+    <>
+      <Message />
+      <FloatingHeart />
+    </>
+  );
 };
 
 export default page;
