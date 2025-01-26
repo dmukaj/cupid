@@ -80,7 +80,7 @@ export default function LoveForm() {
     <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg w-[90%] max-w-lg mx-auto">
       {currentIndex < questions.length ? (
         <>
-          <h2 className="text-xl font-bold text-blue-500 text-center mb-4">
+          <h2 className="text-xl font-bold text-blue-400 text-center mb-4">
             {questions[currentIndex].question}
           </h2>
           {questions[currentIndex].type === "text" ? (
@@ -129,7 +129,7 @@ export default function LoveForm() {
             Click on the link below to continue:
           </h2>
           <Link
-            href="/message"
+            href="/main/message"
             className="text-blue-500 underline mt-4 inline-block"
           >
             Go to Messages

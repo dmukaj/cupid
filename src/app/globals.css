@@ -48,10 +48,9 @@ body {
   position: absolute;
   border-radius: 0 0 15px 15px;
   z-index: -1;
-  box-shadow: #7d7c7c 10px 10px 10px;
+  /* box-shadow: #fadddd 10px 10px 10px; */
 }
 
-/* Envelope flap */
 #top-flap {
   position: absolute;
   width: 0;

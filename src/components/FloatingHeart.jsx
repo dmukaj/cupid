@@ -2,21 +2,21 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Heart } from "lucide-react";
+// import { Heart } from "lucide-react";
 
 const generateRandomPosition = () => ({
   top: Math.random() * 90 + "%",
   left: Math.random() * 90 + "%",
 });
 
-export default function FloatingHearts() {
+export default function FloatingHearts({ animation }) {
   const [positions, setPositions] = useState(
-    Array.from({ length: 12 }, () => generateRandomPosition())
+    Array?.from({ length: 30 }, () => generateRandomPosition())
   );
 
   useEffect(() => {
     const moveHearts = () => {
-      setPositions(Array.from({ length: 12 }, () => generateRandomPosition()));
+      setPositions(Array?.from({ length: 30 }, () => generateRandomPosition()));
     };
 
     const interval = setInterval(moveHearts, 4000);
@@ -34,12 +34,7 @@ export default function FloatingHearts() {
           className="absolute"
           style={{ position: "absolute" }}
         >
-          <Heart
-            className="w-10 h-10 "
-            color="#f76b8a"
-            fill="#f76b8a"
-            opacity={0.7}
-          />
+          {animation}
         </motion.div>
       ))}
     </div>
