@@ -18,7 +18,7 @@ const page = () => {
       <Envelope />
       <FloatingHearts
         animation={
-          <div key={message} className="text-lg text-white font-semibold">
+          <div key={1} className="text-lg text-white font-semibold">
             {message}
           </div>
         }
