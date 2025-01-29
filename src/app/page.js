@@ -6,11 +6,11 @@ export default function Home() {
       <h1 className="font-bold text-lg xl:text-4xl md:text-2xl">
         Welcome to Cupid!
       </h1>
-      <p className="text-md lg:text-xl xl:text-3xl">
+      <p className="text-base lg:text-xl xl:text-3xl">
         🩷 Thinking of the Perfect Date? Let&apos;s Make It Happen! 🩷
       </p>
       <Link
-        className="text-md lg:text-xl xl:text-3xl underline text-blue-500 hover:text-blue-400"
+        className="text-base lg:text-xl xl:text-3xl underline text-blue-500 hover:text-blue-400"
         href="/main"
       >
         Get Started

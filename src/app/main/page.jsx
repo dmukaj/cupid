@@ -16,14 +16,14 @@ const page = () => {
           />
         }
       />
-      <div className="flex flex-col items-center justify-center text-md lg:text-xl xl:text-3xl bg-gradient-to-tr from-pink-500 to-blue-800 text-transparent bg-clip-text">
+      <div className="flex flex-col items-center justify-center text-base lg:text-xl xl:text-3xl bg-gradient-to-tr from-pink-500 to-blue-800 text-transparent bg-clip-text">
         <h1 className="text-lg lg:text-2xl xl:text-4xl">Hello Pookie!</h1>
         <p>My heart is only three steps away</p>
         <>First I need you to answer a few questions.</>
       </div>
       <Link
         href="/main/details"
-        className="text-md lg:text-xl xl:text-3xl underline text-blue-500 hover:text-blue-400"
+        className="text-base lg:text-xl xl:text-3xl underline text-blue-500 hover:text-blue-400"
       >
         Let&apos;s Go!
       </Link>

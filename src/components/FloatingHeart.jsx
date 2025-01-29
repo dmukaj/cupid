@@ -11,15 +11,15 @@ const generateRandomPosition = () => ({
 
 export default function FloatingHearts({ animation }) {
   const [positions, setPositions] = useState(
-    Array?.from({ length: 30 }, () => generateRandomPosition())
+    Array?.from({ length: 15 }, () => generateRandomPosition())
   );
 
   useEffect(() => {
     const moveHearts = () => {
-      setPositions(Array?.from({ length: 30 }, () => generateRandomPosition()));
+      setPositions(Array?.from({ length: 15 }, () => generateRandomPosition()));
     };
 
-    const interval = setInterval(moveHearts, 4000);
+    const interval = setInterval(moveHearts, 3000);
 
     return () => clearInterval(interval);
   }, []);

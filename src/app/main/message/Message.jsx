@@ -20,7 +20,7 @@ const Message = () => {
         <div className="flex flex-col items-center w-full gap-4">
           <textarea
             placeholder="Type me a message here..."
-            className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500m cursor-pointer text-md lg:text-lg xl:text-xl"
+            className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500m cursor-pointer text-base lg:text-lg xl:text-xl"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
@@ -40,7 +40,7 @@ const Message = () => {
         </div>
       ) : (
         <div className="text-center ">
-          <p className="text-md lg:text-lg xl:text-xl text-pink-400">
+          <p className="text-base lg:text-lg xl:text-xl text-pink-400">
             💕 Message Sent! 💕
           </p>
           <Link
