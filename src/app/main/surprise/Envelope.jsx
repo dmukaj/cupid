@@ -34,7 +34,10 @@ const Envelope = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       {!handleYes ? (
-        <div className="p-10 bg-white rounded-xl bg-opacity-60 w-[60vw] max-w-lg text-center">
+        <div
+          id="envelope-message"
+          className="p-10 bg-white rounded-xl bg-opacity-60 w-[60vw] max-w-lg text-center"
+        >
           <h2 className="text-xl font-bold mb-4">Will you be my valentine?</h2>
 
           {/* Button Container for proper alignment */}
