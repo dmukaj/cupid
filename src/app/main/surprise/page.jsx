@@ -1,11 +1,12 @@
 "use client";
 import FloatingHearts from "@/components/FloatingHeart";
 import Envelope from "./Envelope";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { useProgress } from "@/context/ProgressContext";
+import { useMessage } from "@/context/MessageContext";
 
 const page = () => {
-  const [message, setMessage] = useState(localStorage.getItem("message"));
+  const { message } = useMessage("");
   const { completeStep } = useProgress();
 
   useEffect(() => {
@@ -17,7 +18,7 @@ const page = () => {
       <Envelope />
       <FloatingHearts
         animation={
-          <div key={1} className="text-lg text-white font-semibold">
+          <div key={message} className="text-lg text-white font-semibold">
             {message}
           </div>
         }

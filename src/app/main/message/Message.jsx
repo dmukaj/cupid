@@ -3,13 +3,13 @@
 import React from "react";
 import Link from "next/link";
 import { useState } from "react";
+import { useMessage } from "@/context/MessageContext";
 
 const Message = () => {
-  const [message, setMessage] = useState("");
+  const { message, setMessage } = useMessage("");
   const [clicked, setClicked] = useState(false);
 
   const handleSubmit = (e) => {
-    localStorage.setItem("message", message);
     setClicked(true);
     e.preventDefault();
     console.log(message);
@@ -20,18 +20,18 @@ const Message = () => {
         <div className="flex flex-col items-center w-full gap-4">
           <textarea
             placeholder="Type me a message here..."
-            className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500m cursor-pointer"
+            className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500m cursor-pointer text-md lg:text-lg xl:text-xl"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
           <Link
             href="https://www.amazon.com/"
-            className="text-blue-500 underline"
+            className="text-lg lg:text-xl xl:text-2xl text-blue-500 underline"
           >
             Buy me a gift!
           </Link>
           <button
-            className="bg-gradient-to-r from-pink-500 to-blue-300 text-white px-4 py-2 rounded-md "
+            className="bg-gradient-to-r from-pink-500 to-blue-300 text-white px-4 py-2 rounded-md text-lg lg:text-xl xl:text-2xl "
             type="submit"
             onClick={handleSubmit}
           >
