@@ -17,7 +17,7 @@ const page = () => {
         }
       />
       <div className="flex flex-col items-center justify-center text-base lg:text-xl xl:text-3xl bg-gradient-to-tr from-pink-500 to-blue-800 text-transparent bg-clip-text">
-        <h1 className="text-lg lg:text-2xl xl:text-4xl">Hello Pookie!</h1>
+        <h1 className="text-lg lg:text-2xl xl:text-4xl"> Hey You!</h1>
         <p>My heart is only three steps away</p>
         <>First I need you to answer a few questions.</>
       </div>

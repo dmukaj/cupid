@@ -12,13 +12,6 @@ export const ProgressBar = () => {
       <h2 className="sr-only">Steps</h2>
 
       <div className="after:mt-4 after:block after:h-1 after:w-full after:rounded-lg after:bg-gray-200">
-        {/* <div
-          className={`after:absolute after:top-5 after:mt-4 after:block after:h-1 after:w-full after:rounded-lg after:transition-all after:duration-500 ${
-            progress.details && "after:bg-blue-600 after:w-[20%]"
-          } ${progress.message && "after:bg-blue-600 after:w-[50%]"} ${
-            progress.surprise && "after:bg-blue-600 after:w-[100%]"
-          } `}
-        ></div> */}
         <ol className="grid grid-cols-3 text-sm font-medium text-gray-500">
           <li
             className={`relative flex justify-start  ${

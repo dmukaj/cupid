@@ -77,7 +77,7 @@ export default function LoveForm() {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg w-[90%] max-w-lg mx-auto">
+    <div className="flex flex-col items-center p-6 bg-blue-50 rounded-xl w-[90%] max-w-lg mx-auto">
       {currentIndex < questions.length ? (
         <>
           <h2 className="text-xl font-bold text-blue-400 text-center mb-4">
@@ -95,7 +95,7 @@ export default function LoveForm() {
             <select
               value={answers[currentIndex]}
               onChange={handleInputChange}
-              className="mt-1.5 w-full rounded-lg shadow-pink-200 shadow-lg text-gray-800 sm:text-sm p-4"
+              className="mt-1.5 w-full rounded-lg shadow-lg text-gray-800 sm:text-sm p-4"
             >
               <option value="">Select an option...</option>
               {questions[currentIndex].options.map((option, index) => (
